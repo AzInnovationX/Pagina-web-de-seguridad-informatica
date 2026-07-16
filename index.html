@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguridad Informática | Az InnovationX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -15,20 +18,27 @@
         :root {
             --primary: #0066ff;
             --secondary: #00d4ff;
+            --accent: #ffb800; /* gold-amber */
             --dark: #0a0e27;
-            --darker: #050714;
-            --light: #ffffff;
+            --darker: #040610;
+            --light: #f8fafc;
             --gray: #94a3b8;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --cyber-gradient: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            --accent-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            --gold-gradient: linear-gradient(135deg, #ffb300 0%, #f57c00 100%);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--darker);
             color: var(--light);
             overflow-x: hidden;
             position: relative;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .logo, .brand-name-top, .brand-slogan-bottom {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         /* Marca de agua */
@@ -37,10 +47,11 @@
             bottom: 20px;
             right: 20px;
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.08);
             z-index: 1;
             pointer-events: none;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         /* Navegación */
@@ -48,15 +59,20 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(4, 6, 16, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
+            padding: 1.2rem 0;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav.scrolled {
-            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+            background: rgba(4, 6, 16, 0.95);
+            padding: 0.9rem 0;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.2);
         }
 
         .nav-container {
@@ -69,14 +85,20 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text {
             background: var(--cyber-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .nav-links {
@@ -86,10 +108,12 @@
         }
 
         .nav-links a {
-            color: var(--light);
+            color: var(--gray);
+            font-weight: 500;
             text-decoration: none;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -103,7 +127,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--secondary);
+            background: var(--cyber-gradient);
             transition: width 0.3s ease;
         }
 
@@ -118,7 +142,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            background: radial-gradient(circle at center, #0e1738 0%, #040610 100%);
             overflow: hidden;
         }
 
@@ -127,8 +151,9 @@
             position: absolute;
             width: 200%;
             height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230066ff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            animation: wave 20s linear infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230066ff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            animation: wave 25s linear infinite;
+            pointer-events: none;
         }
 
         @keyframes wave {
@@ -136,11 +161,72 @@
             100% { transform: translateX(-50%) translateY(0); }
         }
 
-        .hero-content {
+        /* Hero Container styles */
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-logo-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+
+        .brand-logo-wrapper {
+            width: 100%;
+            max-width: 380px;
+            position: relative;
+            filter: drop-shadow(0 0 40px rgba(0, 102, 255, 0.25));
+            transition: transform 0.5s ease;
+        }
+
+        .brand-logo-wrapper:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .brand-text-display {
+            margin-top: 2rem;
             text-align: center;
-            z-index: 1;
-            max-width: 900px;
-            padding: 0 2rem;
+        }
+
+        .brand-name-top {
+            display: block;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.35rem;
+        }
+
+        .brand-slogan-bottom {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--accent);
+            text-transform: uppercase;
+            opacity: 0.9;
+            text-shadow: 0 0 15px rgba(255, 184, 0, 0.4);
+        }
+
+        .hero-content-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
             animation: fadeInUp 1s ease;
         }
 
@@ -155,68 +241,104 @@
             }
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+        .hero-content-side h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
             background: var(--cyber-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate;
+            font-weight: 700;
+            filter: drop-shadow(0 0 30px rgba(0, 102, 255, 0.2));
         }
 
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.5)); }
-            to { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.8)); }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
+        .hero-content-side p {
+            font-size: 1.2rem;
             color: var(--gray);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 1rem 2.2rem;
             background: var(--cyber-gradient);
             color: var(--light);
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 102, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* SVG Custom Animations */
+        @keyframes pulse-filament {
+            0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 2px rgba(255, 75, 43, 0.4)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 12px rgba(255, 75, 43, 1)); }
+        }
+        .filament-group {
+            animation: pulse-filament 2.5s ease-in-out infinite;
+        }
+
+        @keyframes glow-bulb {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 179, 0, 0.2)); }
+            50% { filter: drop-shadow(0 0 18px rgba(255, 179, 0, 0.7)); }
+        }
+        .bulb-group {
+            animation: glow-bulb 3.5s ease-in-out infinite;
+        }
+
+        @keyframes data-flow {
+            0% { stroke-dashoffset: 40; }
+            100% { stroke-dashoffset: 0; }
+        }
+        .circuit-lines path {
+            stroke-dasharray: 8 6;
+            animation: data-flow 15s linear infinite;
+        }
+
+        @keyframes ray-blink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .energy-rays {
+            animation: ray-blink 2s ease-in-out infinite;
         }
 
         /* Secciones */
         section {
-            padding: 5rem 2rem;
+            padding: 7rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2.6rem;
+            margin-bottom: 4rem;
             position: relative;
             display: inline-block;
             width: 100%;
+            font-weight: 700;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background: var(--cyber-gradient);
+            border-radius: 2px;
         }
 
         /* Servicios */
@@ -227,19 +349,20 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 102, 255, 0.3);
-            border-radius: 15px;
-            padding: 2rem;
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(5px);
         }
 
         .service-card::before {
@@ -251,34 +374,68 @@
             height: 100%;
             background: var(--cyber-gradient);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
             z-index: -1;
         }
 
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--cyber-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
         .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.3);
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
         }
 
         .service-card:hover::before {
-            opacity: 0.1;
+            opacity: 0.05;
+        }
+
+        .service-card:hover::after {
+            transform: scaleX(1);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: rgba(0, 102, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--cyber-gradient);
+            color: var(--light);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--light);
+            font-weight: 600;
         }
 
         .service-card p {
             color: var(--gray);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
@@ -289,7 +446,7 @@
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -297,31 +454,45 @@
         .benefit-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.5s ease;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .benefit-item.visible {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
 
         .benefit-icon {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: var(--secondary);
-            min-width: 40px;
+            min-width: 45px;
+            height: 45px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 212, 255, 0.15);
         }
 
         .benefit-content h4 {
             margin-bottom: 0.5rem;
             color: var(--light);
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .benefit-content p {
             color: var(--gray);
             font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* Casos de Estudio */
@@ -332,21 +503,25 @@
         .cases-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .case-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(10, 14, 39, 0.6);
             border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.2rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(5px);
         }
 
         .case-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+            transform: translateY(-5px) translateX(2px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.15);
         }
 
         .case-card.negative {
@@ -354,19 +529,21 @@
         }
 
         .case-card.positive {
-            border-left-color: #44ff44;
+            border-left-color: #00e676;
         }
 
         .case-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            font-weight: 600;
         }
 
         .case-description {
             color: var(--gray);
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
@@ -381,19 +558,21 @@
         }
 
         .faq-item {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 1rem;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1.2rem;
+            border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .faq-item:hover {
-            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.1);
+            border-color: rgba(0, 102, 255, 0.3);
         }
 
         .faq-question {
-            padding: 1.5rem;
+            padding: 1.6rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -402,16 +581,19 @@
         }
 
         .faq-question:hover {
-            background: rgba(0, 102, 255, 0.1);
+            background: rgba(0, 102, 255, 0.05);
         }
 
         .faq-question h4 {
             color: var(--light);
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .faq-icon {
             color: var(--secondary);
             transition: transform 0.3s ease;
+            font-size: 1.1rem;
         }
 
         .faq-item.active .faq-icon {
@@ -421,7 +603,7 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .faq-item.active .faq-answer {
@@ -429,35 +611,68 @@
         }
 
         .faq-answer p {
-            padding: 0 1.5rem 1.5rem;
+            padding: 0 1.6rem 1.6rem;
             color: var(--gray);
+            font-size: 0.95rem;
             line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         /* Footer */
         footer {
             background: var(--darker);
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(0, 102, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: var(--light);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .nav-links {
                 display: none;
             }
 
-            .hero h1 {
+            .section-title {
                 font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding-top: 6.5rem;
+                text-align: center;
             }
 
-            .section-title {
-                font-size: 1.8rem;
+            .hero-logo-side {
+                order: 1;
+            }
+
+            .hero-content-side {
+                order: 2;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-content-side h1 {
+                font-size: 2.4rem;
+            }
+
+            .brand-name-top {
+                font-size: 2rem;
+            }
+
+            .brand-slogan-bottom {
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+            }
+
+            .brand-logo-wrapper {
+                max-width: 280px;
             }
         }
 
@@ -465,7 +680,7 @@
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .fade-in.visible {
@@ -496,7 +711,7 @@
         .loader-circle {
             width: 50px;
             height: 50px;
-            border: 3px solid rgba(0, 102, 255, 0.3);
+            border: 3px solid rgba(0, 102, 255, 0.1);
             border-top-color: var(--secondary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -519,10 +734,27 @@
     <!-- Navegación -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-shield-alt"></i>
-                Az InnovationX
-            </div>
+            <a href="#inicio" class="logo">
+                <svg class="nav-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="36" height="36" style="vertical-align: middle; filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));">
+                    <defs>
+                        <linearGradient id="navBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0066ff" />
+                            <stop offset="100%" stop-color="#00d4ff" />
+                        </linearGradient>
+                        <linearGradient id="navGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFB300" />
+                            <stop offset="100%" stop-color="#FF4B2B" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Shield -->
+                    <path d="M 50 15 C 65 15, 74 20, 74 35 C 74 54, 57 70, 50 75 C 43 70, 26 54, 26 35 C 26 20, 35 15, 50 15 Z" fill="rgba(10, 14, 39, 0.85)" stroke="url(#navBlue)" stroke-width="3" stroke-linejoin="round" />
+                    <!-- Bulb -->
+                    <path d="M 42 38 C 42 30, 58 30, 58 38 C 58 44, 53 47, 53 51 L 53 54 C 53 55, 51 56, 50 56 C 49 56, 47 55, 47 54 L 47 51 C 47 47, 42 44, 42 38 Z" fill="none" stroke="url(#navGold)" stroke-width="2" />
+                    <!-- Filament (Heart) -->
+                    <path d="M 50 44 C 50 44, 47 41, 47 38 C 47 35, 49 33, 50 36 C 51 33, 53 35, 53 38 C 53 41, 50 44, 50 44 Z" fill="none" stroke="#FF4B2B" stroke-width="1.2" />
+                </svg>
+                <span class="logo-text">Az InnovationX</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -535,10 +767,148 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Protegiendo tu Futuro Digital</h1>
-            <p>En un mundo donde cada clic cuenta, tu seguridad es nuestra prioridad. El antivirus no hace magia... pero nosotros casi sí.</p>
-            <a href="https://azinnovationx.blogspot.com/" target="_blank" rel="noopener noreferrer" class="cta-button">Conoce Más</a>
+        <div class="hero-container">
+            <div class="hero-logo-side">
+                <div class="brand-logo-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+                        <defs>
+                            <!-- Gradients -->
+                            <linearGradient id="cyberBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0052D4" />
+                                <stop offset="50%" stop-color="#4364F7" />
+                                <stop offset="100%" stop-color="#6FB1FC" />
+                            </linearGradient>
+                            <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00F2FE" />
+                                <stop offset="100%" stop-color="#4FACFE" />
+                            </linearGradient>
+                            <linearGradient id="amberGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFB300" />
+                                <stop offset="100%" stop-color="#F57C00" />
+                            </linearGradient>
+                            <linearGradient id="goldOrange" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#FF416C" />
+                                <stop offset="100%" stop-color="#FF4B2B" />
+                            </linearGradient>
+                            <!-- Glow Filters -->
+                            <filter id="glow-heavy" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="10" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                            <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
+                        </defs>
+
+                        <!-- Background Ambient Glows -->
+                        <circle cx="250" cy="220" r="130" fill="url(#cyberBlue)" opacity="0.12" filter="url(#glow-heavy)" />
+                        <circle cx="250" cy="240" r="90" fill="url(#amberGlow)" opacity="0.1" filter="url(#glow-heavy)" />
+
+                        <!-- Tech Circuit Lines & Nodes -->
+                        <g class="circuit-lines" stroke="url(#neonCyan)" stroke-width="2.5" fill="none" opacity="0.65">
+                            <!-- Left path -->
+                            <path d="M 120 220 L 70 220 L 50 250 L 50 300 C 50 340, 100 370, 150 370" />
+                            <!-- Right path -->
+                            <path d="M 380 220 L 430 220 L 450 190 L 450 140 C 450 100, 400 70, 350 70" />
+                            <!-- Supporting traces -->
+                            <path d="M 160 110 L 110 110 L 90 140 L 90 180" />
+                            <path d="M 340 330 L 390 330 L 410 300 L 410 260" />
+                        </g>
+
+                        <g class="circuit-nodes" fill="url(#neonCyan)">
+                            <circle cx="70" cy="220" r="5" />
+                            <circle cx="50" cy="300" r="4.5" />
+                            <circle cx="430" cy="220" r="5" />
+                            <circle cx="450" cy="140" r="4.5" />
+                            <circle cx="110" cy="110" r="4" />
+                            <circle cx="390" cy="330" r="4" />
+                        </g>
+
+                        <!-- Outer Shield -->
+                        <g class="shield-group" filter="url(#glow-light)">
+                            <!-- Outer Tech Shield Border -->
+                            <path d="M 250 50
+                                     C 340 50, 390 80, 390 170
+                                     C 390 280, 290 370, 250 400
+                                     C 210 370, 110 280, 110 170
+                                     C 110 80, 160 50, 250 50 Z"
+                                  fill="none" stroke="url(#neonCyan)" stroke-width="6.5" stroke-linejoin="round" />
+
+                            <!-- Inner Shield Glow Border -->
+                            <path d="M 250 70
+                                     C 320 70, 365 95, 365 170
+                                     C 365 260, 280 340, 250 370
+                                     C 220 340, 135 260, 135 170
+                                     C 135 95, 180 70, 250 70 Z"
+                                  fill="rgba(6, 10, 26, 0.85)" stroke="url(#cyberBlue)" stroke-width="3" stroke-linejoin="round" />
+                        </g>
+
+                        <!-- Innovation Lightbulb -->
+                        <g class="bulb-group" filter="url(#glow-heavy)">
+                            <!-- Glowing bulb outer shape -->
+                            <path d="M 200 190
+                                     C 200 145, 300 145, 300 190
+                                     C 300 225, 270 240, 270 265
+                                     L 270 285
+                                     C 270 290, 265 295, 260 295
+                                     L 240 295
+                                     C 235 295, 230 290, 230 285
+                                     L 230 265
+                                     C 230 240, 200 225, 200 190 Z"
+                                  fill="none" stroke="url(#amberGlow)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <!-- Screw Threads -->
+                            <path d="M 235 303 L 265 303" stroke="url(#amberGlow)" stroke-width="4.5" stroke-linecap="round" />
+                            <path d="M 238 311 L 262 311" stroke="url(#amberGlow)" stroke-width="4.5" stroke-linecap="round" />
+                            <path d="M 243 319 L 257 319" stroke="url(#amberGlow)" stroke-width="4.5" stroke-linecap="round" />
+                            <!-- Screw Base Contact -->
+                            <circle cx="250" cy="326" r="3.5" fill="url(#amberGlow)" />
+                        </g>
+
+                        <!-- Tech Filament (Heart-shaped) -->
+                        <g class="filament-group" filter="url(#glow-light)">
+                            <path d="M 250 225
+                                     C 250 225, 232 205, 232 188
+                                     C 232 176, 240 168, 250 180
+                                     C 260 168, 268 176, 268 188
+                                     C 268 205, 250 225, 250 225 Z"
+                                  fill="none" stroke="url(#goldOrange)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <!-- Support wires inside the bulb -->
+                            <path d="M 235 255 L 243 218" stroke="url(#amberGlow)" stroke-width="2" stroke-linecap="round" />
+                            <path d="M 265 255 L 257 218" stroke="url(#amberGlow)" stroke-width="2" stroke-linecap="round" />
+                        </g>
+
+                        <!-- Energy / Idea Rays -->
+                        <g class="energy-rays" stroke="url(#amberGlow)" stroke-width="3" stroke-linecap="round" opacity="0.95">
+                            <line x1="165" y1="120" x2="145" y2="105" />
+                            <line x1="335" y1="120" x2="355" y2="105" />
+                            <line x1="150" y1="190" x2="125" y2="190" />
+                            <line x1="350" y1="190" x2="375" y2="190" />
+                            <line x1="165" y1="260" x2="145" y2="275" />
+                            <line x1="335" y1="260" x2="355" y2="275" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="brand-text-display">
+                    <span class="brand-name-top">Az InnovationX</span>
+                    <span class="brand-slogan-bottom">"Donde las ideas cobran vida"</span>
+                </div>
+            </div>
+            <div class="hero-content-side">
+                <h1>Protegiendo tu Futuro Digital</h1>
+                <p>En un mundo donde cada clic cuenta, tu seguridad es nuestra prioridad. El antivirus no hace magia... pero nosotros casi sí.</p>
+                <div>
+                    <a href="https://azinnovationx.blogspot.com/" target="_blank" rel="noopener noreferrer" class="cta-button">Conoce Más</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -646,7 +1016,7 @@
             </div>
             <div class="case-card positive fade-in">
                 <div class="case-title">
-                    <i class="fas fa-check-circle" style="color: #44ff44;"></i>
+                    <i class="fas fa-check-circle" style="color: #00e676;"></i>
                     <span>Empresa Preparada</span>
                 </div>
                 <p class="case-description">
@@ -711,7 +1081,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Az InnovationX. Todos los derechos reservados.</p>
-        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.5rem;">
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.75rem;">
             Tu seguridad es nuestra misión
         </p>
     </footer>
@@ -721,7 +1091,7 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
-            }, 1000);
+            }, 800);
         });
 
         // Navbar scroll effect
@@ -750,8 +1120,8 @@
 
         // Fade in animation on scroll
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -767,7 +1137,7 @@
         });
 
         document.querySelectorAll('.benefit-item').forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.1}s`;
+            el.style.transitionDelay = `${index * 0.08}s`;
             observer.observe(el);
         });
 
